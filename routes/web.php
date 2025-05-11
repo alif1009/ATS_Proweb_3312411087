@@ -18,3 +18,12 @@ Route::get('/profile/profil', function () {
 
 Route::get('/auditorium', [AuditoriumController::class, 'show']);
 Route::get('/gedungtekno', [GedungteknoController::class, 'show']);
+
+Route::get('/festivalkonser', function () {
+    return view('pages.festivalkonser');
+})->name('festivalkonser');
+
+Route::get('/festivalbudaya', function () {
+    return view('pages.festivalbudaya');
+    
+})->name('festivalbudaya');
