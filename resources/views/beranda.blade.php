@@ -27,8 +27,8 @@
             <a href="/" class="font-bold hover:text-blue-500 text-2xl">Logo</a>
         </div>
 
-         <!-- Menu navigasi utama di tengah -->
-         <div class="flex-1 flex justify-center space-x-8">
+        <!-- Menu navigasi utama di tengah -->
+        <div class="flex-1 flex justify-center space-x-8">
             <div x-data="{ open: false }" class="relative flex items-center space-x-2">
                 <!-- Trigger Dropdown -->
                 <button @click="open = !open"
@@ -54,18 +54,15 @@
                 <!-- Trigger Dropdown -->
                 <button @click="open = !open"
                     class="flex items-center font-semibold hover:text-blue-500 focus:outline-none">
-                    Tempat  <span class="ml-1">▼</span>
+                    Tempat <span class="ml-1">▼</span>
                 </button>
 
                 <!-- Dropdown Content -->
                 <div x-show="open" @click.away="open = false" x-transition
                     class="absolute top-full mt-2 bg-white border rounded-md shadow-lg w-48 z-50">
-                    <a href="#"
-                        class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Auditorium</a>
-                    <a href="#"
-                        class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Gedung Tekno</a>
-                    <a href="#"
-                        class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Lapangan</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Auditorium</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Gedung Tekno</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Lapangan</a>
                 </div>
             </div>
             <div class="flex items-center space-x-2">
@@ -82,120 +79,118 @@
 
         <!-- Tombol Register dan Login di kanan -->
         <div class="flex-1 flex justify-end space-x-4">
-             <!-- Search Bar -->
-    <form action="#" method="GET" class="relative">
-        <input type="text" name="query" placeholder="Search...." 
-               class="border border-gray-300 rounded-lg py-1 px-3 focus:outline-none focus:ring-2 focus:ring-blue-400" />
-        <button type="submit" class="absolute right-2 top-1.5 text-gray-500 hover:text-blue-500">
-            🔍
-        </button>
-    </form>
-    <div x-data="{ open: false }" class="relative">
-        <button @click="open = !open"
-            class="flex items-center space-x-2 bg-gray-200 text-black rounded-lg px-4 py-1 font-semibold hover:bg-gray-300 focus:outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M5.121 17.804A11.966 11.966 0 0012 20c2.21 0 4.28-.595 6.032-1.62a6.5 6.5 0 10-11.758 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-            <span>Profile(Mahasiswa)</span>
-        </button>
-        <!-- Dropdown Menu -->
-    <div x-show="open" @click.away="open = false" x-transition
-    class="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-50">
-    <a href="{{ route('profile.profil') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Profile Saya</a>
-    <a href="#" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Pengaturan</a>
-    <form method="POST" action="#">
-        @csrf
-        <button type="submit"
-            class="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100">Log out</button>
-    </form>
-</div>
-</div>
-    </a>
+            <!-- Search Bar -->
+            <form action="#" method="GET" class="relative">
+                <input type="text" name="query" placeholder="Search...."
+                    class="border border-gray-300 rounded-lg py-1 px-3 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                <button type="submit" class="absolute right-2 top-1.5 text-gray-500 hover:text-blue-500">
+                    🔍
+                </button>
+            </form>
+            <div x-data="{ open: false }" class="relative">
+                <button @click="open = !open"
+                    class="flex items-center space-x-2 bg-gray-200 text-black rounded-lg px-4 py-1 font-semibold hover:bg-gray-300 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M5.121 17.804A11.966 11.966 0 0012 20c2.21 0 4.28-.595 6.032-1.62a6.5 6.5 0 10-11.758 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <span>Profile(Mahasiswa)</span>
+                </button>
+                <!-- Dropdown Menu -->
+                <div x-show="open" @click.away="open = false" x-transition
+                    class="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-50">
+                    <a href="{{ route('profile.profil') }}"
+                        class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Profile Saya</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Pengaturan</a>
+                    <form method="POST" action="#">
+                        @csrf
+                        <button type="submit"
+                            class="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100">Log out</button>
+                    </form>
+                </div>
+            </div>
+            </a>
         </div>
     </nav>
 
-<!-- HERO SECTION -->
-<section class="relative overflow-hidden">
-    <!-- Slider wrapper -->
-    <div id="heroSlider" class="flex transition-transform duration-700 ease-in-out w-[400%]">
-        <!-- Slide 1 -->
-        <div class="w-full flex-shrink-0 relative">
-            <img src="https://idebiz.id/wp-content/uploads/2024/01/Event-Organizer-Handal-Pelatihan-Utama-untuk-Kesuksesan.jpg"
-                alt="Slide 1" class="w-[2000px] h-[600px] object-cover">
-            <div class="absolute top-20 left-10 text-white">
-                <h1 class="text-5xl font-bold mb-2">Hidup Adalah Sebuah Peristiwa</h1>
-                <p class="text-2xl">Jadikan Peristiwa Anda Istimewa Bersama Kami</p>
+    <!-- HERO SECTION -->
+    <section class="relative overflow-hidden">
+        <!-- Slider wrapper -->
+        <div id="heroSlider" class="flex transition-transform duration-700 ease-in-out w-[400%]">
+            <!-- Slide 1 -->
+            <div class="w-full flex-shrink-0 relative">
+                <img src="https://idebiz.id/wp-content/uploads/2024/01/Event-Organizer-Handal-Pelatihan-Utama-untuk-Kesuksesan.jpg"
+                    alt="Slide 1" class="w-[2000px] h-[600px] object-cover">
+                <div class="absolute top-20 left-10 text-white">
+                    <h1 class="text-5xl font-bold mb-2">Hidup Adalah Sebuah Peristiwa</h1>
+                    <p class="text-2xl">Jadikan Peristiwa Anda Istimewa Bersama Kami</p>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="w-full flex-shrink-0 relative">
+                <img src="{{ asset('images/seminar20.jpg') }}" alt="Slide 2" class="w-[1690px] h-[600px] object-cover">
+                <div class="absolute top-20 left-10 text-white">
+                    <h1 class="text-5xl font-bold mb-2">Ruang Inspirasi</h1>
+                    <p class="text-2xl">Seminar & Workshop Profesional</p>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="w-full flex-shrink-0 relative">
+                <img src="{{ asset('images/festival20.jpg') }}" alt="Slide 3" class="w-[1690px] h-[600px] object-cover">
+                <div class="absolute top-20 left-10 text-white">
+                    <h1 class="text-5xl font-bold mb-2">Festival Meriah</h1>
+                    <p class="text-2xl">Rasakan Euforia Bersama Kami</p>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="w-full flex-shrink-0 relative">
+                <img src="{{ asset('images/pameran 12.jpg') }}" alt="Slide 4" class="w-[1690px] h-[600px] object-cover">
+                <div class="absolute top-20 left-10 text-white">
+                    <h1 class="text-5xl font-bold mb-2">Pameran Berkualitas</h1>
+                    <p class="text-2xl">Wujudkan Acara Impian Anda</p>
+                </div>
             </div>
         </div>
 
-        <!-- Slide 2 -->
-        <div class="w-full flex-shrink-0 relative">
-            <img src="{{ asset('images/seminar20.jpg') }}" alt="Slide 2"
-                class="w-[1690px] h-[600px] object-cover">
-            <div class="absolute top-20 left-10 text-white">
-                <h1 class="text-5xl font-bold mb-2">Ruang Inspirasi</h1>
-                <p class="text-2xl">Seminar & Workshop Profesional</p>
-            </div>
+        <!-- Dot Navigasi -->
+        <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+            <button onclick="goToSlide(0)" class="w-3 h-3 bg-white rounded-full"></button>
+            <button onclick="goToSlide(1)" class="w-3 h-3 bg-white/50 rounded-full"></button>
+            <button onclick="goToSlide(2)" class="w-3 h-3 bg-white/50 rounded-full"></button>
+            <button onclick="goToSlide(3)" class="w-3 h-3 bg-white/50 rounded-full"></button>
         </div>
+    </section>
 
-        <!-- Slide 3 -->
-        <div class="w-full flex-shrink-0 relative">
-            <img src="{{ asset('images/festival20.jpg') }}" alt="Slide 3"
-                class="w-[1690px] h-[600px] object-cover">
-            <div class="absolute top-20 left-10 text-white">
-                <h1 class="text-5xl font-bold mb-2">Festival Meriah</h1>
-                <p class="text-2xl">Rasakan Euforia Bersama Kami</p>
-            </div>
-        </div>
+    <!-- Script -->
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 4;
+        const slider = document.getElementById("heroSlider");
 
-        <!-- Slide 4 -->
-        <div class="w-full flex-shrink-0 relative">
-            <img src="{{ asset('images/pameran 12.jpg') }}" alt="Slide 4"
-                class="w-[1690px] h-[600px] object-cover">
-            <div class="absolute top-20 left-10 text-white">
-                <h1 class="text-5xl font-bold mb-2">Pameran Berkualitas</h1>
-                <p class="text-2xl">Wujudkan Acara Impian Anda</p>
-            </div>
-        </div>
-    </div>
+        function goToSlide(index) {
+            currentSlide = index;
+            slider.style.transform = translateX(-${ index * 100} %);
+            updateDots();
+        }
 
-    <!-- Dot Navigasi -->
-    <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
-        <button onclick="goToSlide(0)" class="w-3 h-3 bg-white rounded-full"></button>
-        <button onclick="goToSlide(1)" class="w-3 h-3 bg-white/50 rounded-full"></button>
-        <button onclick="goToSlide(2)" class="w-3 h-3 bg-white/50 rounded-full"></button>
-        <button onclick="goToSlide(3)" class="w-3 h-3 bg-white/50 rounded-full"></button>
-    </div>
-</section>
+        function updateDots() {
+            const dots = document.querySelectorAll("button[onclick^='goToSlide']");
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle("bg-white", idx === currentSlide);
+                dot.classList.toggle("bg-white/50", idx !== currentSlide);
+            });
+        }
 
-<!-- Script -->
-<script>
-    let currentSlide = 0;
-    const totalSlides = 4;
-    const slider = document.getElementById("heroSlider");
-
-    function goToSlide(index) {
-        currentSlide = index;
-        slider.style.transform = translateX(-${index * 100}%);
-        updateDots();
-    }
-
-    function updateDots() {
-        const dots = document.querySelectorAll("button[onclick^='goToSlide']");
-        dots.forEach((dot, idx) => {
-            dot.classList.toggle("bg-white", idx === currentSlide);
-            dot.classList.toggle("bg-white/50", idx !== currentSlide);
-        });
-    }
-
-    // Auto slide every 6 seconds
-    setInterval(() => {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        goToSlide(currentSlide);
-    }, 6000);
-</script>
+        // Auto slide every 6 seconds
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            goToSlide(currentSlide);
+        }, 6000);
+    </script>
 
 
 
@@ -320,9 +315,8 @@
 
     <<section class="relative bg-blue-900 text-white py-12 overflow-hidden">
         <!-- Background Gambar -->
-        <img src="{{ asset('images/BGpameran.jpg') }}" 
-             class="absolute inset-0 w-full h-full object-cover opacity-30 z-0" 
-             alt="Background Pameran">
+        <img src="{{ asset('images/BGpameran.jpg') }}"
+            class="absolute inset-0 w-full h-full object-cover opacity-30 z-0" alt="Background Pameran">
         <!-- Judul -->
         <div class="text-center mb-8">
             <h2 class="text-3xl font-bold">Pameran</h2>
@@ -346,8 +340,7 @@
             <!-- Card pameran 2 -->
             <div
                 class="bg-white text-black rounded-xl overflow-hidden w-60 shadow-lg opacity-0 translate-y-5 fade-in transition-all duration-700 ease-in-out">
-                <img src="{{ asset('images/pameran3.jpg') }}"
-                    class="h-40 w-full object-cover">
+                <img src="{{ asset('images/pameran3.jpg') }}" class="h-40 w-full object-cover">
                 <div class="p-4">
                     <h3 class="font-bold">Pamaeran Projek</h3>
                     <p>Rp xx.xx.xx</p>
@@ -357,52 +350,52 @@
             </div>
 
         </div>
-    </section>
+        </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-black text-white py-8">
-        <div class="flex justify-center space-x-6 mb-4">
-            <!-- Ikon sosial media -->
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"
-                    class="w-6 h-6"></a>
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"
-                    class="w-6 h-6"></a>
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"
-                    class="w-6 h-6"></a>
-        </div>
+        <!-- FOOTER -->
+        <footer class="bg-black text-white py-8">
+            <div class="flex justify-center space-x-6 mb-4">
+                <!-- Ikon sosial media -->
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"
+                        class="w-6 h-6"></a>
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"
+                        class="w-6 h-6"></a>
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"
+                        class="w-6 h-6"></a>
+            </div>
 
-        <!-- Hak cipta dan link tambahan -->
-        <div class="text-center text-gray-400 text-sm">
-            2024 Your Website. All rights reserved.
-            <span class="px-2">|</span>
-            <a href="#" class="hover:text-white">Privacy Policy</a>
-            <span class="px-2">|</span>
-            <a href="#" class="hover:text-white">Terms of Service</a>
-        </div>
-    </footer>
+            <!-- Hak cipta dan link tambahan -->
+            <div class="text-center text-gray-400 text-sm">
+                2024 Your Website. All rights reserved.
+                <span class="px-2">|</span>
+                <a href="#" class="hover:text-white">Privacy Policy</a>
+                <span class="px-2">|</span>
+                <a href="#" class="hover:text-white">Terms of Service</a>
+            </div>
+        </footer>
 
-    <!-- SCRIPT: Animasi fade-in saat scroll -->
-    <script>
-        const faders = document.querySelectorAll('.fade-in');
+        <!-- SCRIPT: Animasi fade-in saat scroll -->
+        <script>
+            const faders = document.querySelectorAll('.fade-in');
 
-        const appearOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
-        };
+            const appearOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            };
 
-        const appearOnScroll = new IntersectionObserver(function (entries, observer) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-                entry.target.classList.remove('opacity-0', 'translate-y-5');
-                entry.target.classList.add('opacity-100', 'translate-y-0');
-                observer.unobserve(entry.target);
+            const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.remove('opacity-0', 'translate-y-5');
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    observer.unobserve(entry.target);
+                });
+            }, appearOptions);
+
+            faders.forEach(fader => {
+                appearOnScroll.observe(fader);
             });
-        }, appearOptions);
-
-        faders.forEach(fader => {
-            appearOnScroll.observe(fader);
-        });
-    </script>
+        </script>
 </body>
 
 </html>
